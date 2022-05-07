@@ -1,0 +1,16 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Build",
+			"command": "c++",
+			"type": "process",
+			"args": ["-o", "${workspaceFolder}/src/main.cpp", "-I", "${workspaceFolder}/include", "${workspaceFolder}/src/main.cpp"],
+			"problemMatcher": ["$gcc"],
+			"presentation": {
+				"reveal": "always"
+			},
+			"group": "build"
+		}
+	]
+}
