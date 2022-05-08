@@ -5,12 +5,27 @@
 			"label": "Build",
 			"command": "c++",
 			"type": "process",
-			"args": ["-o", "${workspaceFolder}/src/main.cpp", "-I", "${workspaceFolder}/include", "${workspaceFolder}/src/main.cpp"],
 			"problemMatcher": ["$gcc"],
 			"presentation": {
 				"reveal": "always"
 			},
-			"group": "build"
+			"group": "build",
+			"windows": {
+				"args": [
+					"-o",
+					"${workspaceFolder}/bin/main.exe",
+					"-I",
+					"${workspaceFolder}/include",
+					"-Wall",
+					"-Wextra",
+					"-std=c++11",
+					"${workspaceFolder}/src/main.cpp",
+					"${workspaceFolder}/src/chain.cpp",
+					"${workspaceFolder}/src/block.cpp",
+					"${workspaceFolder}/src/header.cpp",
+					"${workspaceFolder}/src/SHA256.cpp"
+				]
+			}
 		}
 	]
 }

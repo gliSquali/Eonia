@@ -2,9 +2,5 @@
 	"C_Cpp.files.exclude": {
 		"**/template.*": true
 	},
-	"C_Cpp.exclusionPolicy": "checkFilesAndFolders",
-	"files.associations": {
-		"vector": "cpp",
-		"*.tcc": "cpp"
-	}
+	"C_Cpp.exclusionPolicy": "checkFilesAndFolders"
 }
