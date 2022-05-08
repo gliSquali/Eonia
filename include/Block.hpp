@@ -7,32 +7,32 @@
 #ifndef BLOCK_HPP
 #define BLOCK_HPP
 
-#include <string>
-#include <string.h>
-#include <vector>
+#include "SHA256.hpp"
 #include "Header.hpp"
-
-using string = std::string;
+#include <ostream>
+#include <vector>
 
 class Block: public Header {
 private:
 // int version
-// string previousHash
-// time_t time
+// uint8_t* previousHash
+// uint8_t* merkleRootHash
+// uint64_t createdAt
 
 	// The index of the block
 	long index;
 	// The hash of the block
-	string hash;
+	uint8_t* hash = new uint8_t[SHA256::SIZE];
+	// Array of transactions
+	std::vector<uint8_t*> txs;
 	// Number of transactions
-	int NTx;
-	// Vector of transactions
-	std::vector<string> txs;
+	int nTxs;
+
+	friend std::ostream& operator<<(std::ostream& s, const Block& block);
 
 public:
-	Block(int sVersion, string sPreviousHash, string sMerkleRoot, time_t sTime, long sIndex, string sHash, std::vector<string> sTxs);
-	Block(int sVersion, string sPreviousHash, string sMerkleRoot, time_t sTime, long sIndex, std::vector<string> sTxs);
-	Block(Header sHeader, long sIndex, string sHash, std::vector<string> sTxs);
+	Block(Header sHeader, long sIndex, std::vector<uint8_t*> sTxs);
+	Block(uint8_t* sPreviousHash, uint8_t* sMerkleRootHash, uint64_t sCreateAt, long sIndex, std::vector<uint8_t*> sTxs);
 	~Block();
 
 	long getIndex();
