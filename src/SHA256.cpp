@@ -7,9 +7,11 @@
 */
 
 #include "SHA256.hpp"
+
 #include <cstring>
-#include <sstream>
 #include <iomanip>
+#include <sstream>
+
 
 SHA256::SHA256(): m_blocklen(0), m_bitlen(0) {
 	m_state[0] = 0x6a09e667;

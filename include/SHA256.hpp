@@ -22,7 +22,7 @@ public:
 	uint8_t * digest();
 
 	static std::string toString(const uint8_t * digest);
-	static const short SIZE = 256/sizeof(uint8_t);
+	const static unsigned short SIZE = 256/sizeof(uint8_t);
 
 private:
 	uint8_t  m_data[64];

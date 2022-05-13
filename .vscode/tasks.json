@@ -18,7 +18,7 @@
 					"${workspaceFolder}/include",
 					"-Wall",
 					"-Wextra",
-					"-std=c++11",
+					"-std=c++17",
 					"${workspaceFolder}/src/main.cpp",
 					"${workspaceFolder}/src/chain.cpp",
 					"${workspaceFolder}/src/block.cpp",

@@ -8,18 +8,35 @@
 #define CHAIN_HPP
 
 #include "Block.hpp"
+#include "SHA256.hpp"
+#include <string>
 #include <vector>
+
 
 class Chain {
 private:
-	std::vector<Block> chain;
+	std::string name;
+	unsigned long nBlocks;
+	std::vector<Block> blocks;
+
+
 public:
-	Chain();
+	const static uint8_t emptyHash[SHA256::SIZE];
+	const static uint8_t genesisMerkleRootHash[SHA256::SIZE];
+
+
+	Chain(std::string sName);
 	~Chain();
 
-	Block getGenesis();
+
+	std::string getName();
+
+	// generate new genesis block
+	static Block newGenesis();
+
 	Block getLast(); // pointer?
-	Block get(long index); // pointer?
+	Block get(unsigned long index); // pointer?
+
 	void add(Block sBlock);
 };
 

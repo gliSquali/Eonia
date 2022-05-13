@@ -20,22 +20,35 @@ private:
 // uint64_t createdAt
 
 	// The index of the block
-	long index;
+	unsigned long index;
 	// The hash of the block
-	uint8_t* hash = new uint8_t[SHA256::SIZE];
+	uint8_t* hash;
 	// Array of transactions
 	std::vector<uint8_t*> txs;
 	// Number of transactions
-	int nTxs;
+	unsigned int nTxs;
+
+	inline void copyHash(uint8_t* sHash);
 
 	friend std::ostream& operator<<(std::ostream& s, const Block& block);
 
 public:
-	Block(Header sHeader, long sIndex, std::vector<uint8_t*> sTxs);
-	Block(uint8_t* sPreviousHash, uint8_t* sMerkleRootHash, uint64_t sCreateAt, long sIndex, std::vector<uint8_t*> sTxs);
+	Block(int sVersion, uint8_t* sPreviousHash, uint8_t* sMerkleRootHash, uint64_t sCreatedAt, unsigned long sIndex, uint8_t* sHash, std::vector<uint8_t*> sTxs);
+	Block(int sVersion, const uint8_t* sPreviousHash, const uint8_t* sMerkleRootHash, uint64_t sCreatedAt, unsigned long sIndex, uint8_t* sHash, std::vector<uint8_t*> sTxs);
+
+	Block(Header sHeader, unsigned long sIndex, uint8_t* sHash, std::vector<uint8_t*> sTxs);
+
+	Block(Header sHeader, unsigned long sIndex, std::vector<uint8_t*> sTxs);
+
+	Block(uint8_t* sPreviousHash, uint8_t* sMerkleRootHash, unsigned long sIndex, std::vector<uint8_t*> sTxs);
+	Block(const uint8_t* sPreviousHash, const uint8_t* sMerkleRootHash, unsigned long sIndex, std::vector<uint8_t*> sTxs);
+
+	Block(uint8_t* sPreviousHash, uint8_t* sMerkleRootHash, uint64_t sCreateAt, unsigned long sIndex, std::vector<uint8_t*> sTxs);
+
 	~Block();
 
-	long getIndex();
+
+	unsigned long getIndex();
 };
 
 #endif
