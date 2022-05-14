@@ -13,17 +13,29 @@
 			"windows": {
 				"args": [
 					"-o",
-					"${workspaceFolder}/bin/main.exe",
+					"${workspaceFolder}/bin/Eonia.exe",
 					"-I",
 					"${workspaceFolder}/include",
 					"-Wall",
 					"-Wextra",
 					"-std=c++17",
-					"${workspaceFolder}/src/main.cpp",
-					"${workspaceFolder}/src/chain.cpp",
-					"${workspaceFolder}/src/block.cpp",
-					"${workspaceFolder}/src/header.cpp",
-					"${workspaceFolder}/src/SHA256.cpp"
+					"${workspaceFolder}/src/Eonia.cpp",
+					"${workspaceFolder}/src/Blockchain.cpp",
+					"${workspaceFolder}/src/Block.cpp"
+				]
+			},
+			"linux": {
+				"args": [
+					"-o",
+					"${workspaceFolder}/bin/Eonia.out",
+					"-I",
+					"${workspaceFolder}/include",
+					"-Wall",
+					"-Wextra",
+					"-std=c++17",
+					"${workspaceFolder}/src/Eonia.cpp",
+					"${workspaceFolder}/src/Blockchain.cpp",
+					"${workspaceFolder}/src/Block.cpp"
 				]
 			}
 		}
