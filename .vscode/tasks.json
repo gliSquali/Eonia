@@ -1,0 +1,43 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Build",
+			"command": "c++",
+			"type": "process",
+			"problemMatcher": ["$gcc"],
+			"presentation": {
+				"reveal": "always"
+			},
+			"group": "build",
+			"windows": {
+				"args": [
+					"-o",
+					"${workspaceFolder}/bin/Eonia.exe",
+					"-I",
+					"${workspaceFolder}/include",
+					"-Wall",
+					"-Wextra",
+					"-std=c++17",
+					"${workspaceFolder}/src/Eonia.cpp",
+					"${workspaceFolder}/src/Blockchain.cpp",
+					"${workspaceFolder}/src/Block.cpp"
+				]
+			},
+			"linux": {
+				"args": [
+					"-o",
+					"${workspaceFolder}/bin/Eonia.out",
+					"-I",
+					"${workspaceFolder}/include",
+					"-Wall",
+					"-Wextra",
+					"-std=c++17",
+					"${workspaceFolder}/src/Eonia.cpp",
+					"${workspaceFolder}/src/Blockchain.cpp",
+					"${workspaceFolder}/src/Block.cpp"
+				]
+			}
+		}
+	]
+}
