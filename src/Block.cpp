@@ -37,7 +37,7 @@ std::vector<std::string> Block::getData() {
 std::string Block::toString() {
 	std::string block = "Block " + std::to_string(this->index) + ' ' + this->blockHash + " previous hash " + this->previousHash + "\n-------------------------------\n";
 	std::string dataString = "";
-	for (int i = 0; i < this->data.size(); i++) {
+	for(uint32_t i = 0; i < this->data.size(); i++) {
 		dataString += data[i] + "\n";
 	};
 	block += dataString;
