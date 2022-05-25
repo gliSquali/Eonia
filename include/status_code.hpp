@@ -1,5 +1,5 @@
-#ifndef SIMPLE_WEB_STATUS_CODE_HPP
-#define SIMPLE_WEB_STATUS_CODE_HPP
+#ifndef WEB_STATUS_CODE_HPP
+#define WEB_STATUS_CODE_HPP
 
 #include <string>
 #include <vector>
