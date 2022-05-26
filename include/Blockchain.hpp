@@ -1,6 +1,7 @@
 #ifndef BLOCKCHAIN_HPP
 #define BLOCKCHAIN_HPP
 
+#include <memory>
 #include <stdexcept>
 #include <stdint.h>
 #include <string>

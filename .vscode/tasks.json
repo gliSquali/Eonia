@@ -14,8 +14,8 @@
 				"args": [
 					"-o",
 					"${workspaceFolder}/bin/Eonia.exe",
-					"-I",
-					"${workspaceFolder}/include",
+					"-I${workspaceFolder}/include",
+					"-I${workspaceFolder}/include/asio/include",
 					"-Wall",
 					"-Wextra",
 					"-std=c++14",
@@ -23,7 +23,8 @@
 					"${workspaceFolder}/src/Blockchain.cpp",
 					"${workspaceFolder}/src/Block.cpp",
 					"-lssl",
-					"-lcrypto"
+					"-lcrypto",
+					"-lwsock32"
 				]
 			},
 			"linux": {

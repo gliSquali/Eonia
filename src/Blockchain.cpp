@@ -1,5 +1,6 @@
 #include "Blockchain.hpp"
 
+#include <memory>
 #include <stdexcept>
 #include <stdint.h>
 #include <string>
