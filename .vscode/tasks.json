@@ -18,10 +18,12 @@
 					"${workspaceFolder}/include",
 					"-Wall",
 					"-Wextra",
-					"-std=c++17",
+					"-std=c++14",
 					"${workspaceFolder}/src/Eonia.cpp",
 					"${workspaceFolder}/src/Blockchain.cpp",
-					"${workspaceFolder}/src/Block.cpp"
+					"${workspaceFolder}/src/Block.cpp",
+					"-lssl",
+					"-lcrypto"
 				]
 			},
 			"linux": {
@@ -32,7 +34,7 @@
 					"${workspaceFolder}/include",
 					"-Wall",
 					"-Wextra",
-					"-std=c++17",
+					"-std=c++14",
 					"${workspaceFolder}/src/Eonia.cpp",
 					"${workspaceFolder}/src/Blockchain.cpp",
 					"${workspaceFolder}/src/Block.cpp"
