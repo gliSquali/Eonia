@@ -1,6 +1,6 @@
-EXENAME = main
+EXENAME = bin/Eonia
 SRCNAME = src/Eonia.cpp
-OBJS = main.o
+OBJS = bin/Eonia.o
 
 CXX = g++
 CXXFLAGS = -std=c++14 -Iinclude -lssl -lcrypto -Wall -lboost_system -pthread
