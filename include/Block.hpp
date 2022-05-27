@@ -56,7 +56,7 @@ vector<string> Block::getData(){
 // Prints Block data
 void Block::toString() {
     string dataString;
-    for(int i = 0; i < data.size(); i++)
+    for(size_t i = 0; i < this->data.size(); i++)
         dataString += data[i] + ", ";
     printf("\n-------------------------------\n");
     printf("Block %d\nHash: %s\nPrevious Hash: %s\nContents: %s",

@@ -30,7 +30,7 @@ string getMerkleRoot(const vector<string> &merkle) {
 
 		vector<string> result;
 
-		for(int i = 0; i < new_merkle.size(); i += 2) {
+		for(size_t i = 0; i < new_merkle.size(); i += 2) {
 			string var1 = sha256(new_merkle[i]);
 			string var2 = sha256(new_merkle[i+1]);
 			string hash = sha256(var1+var2);

@@ -16,7 +16,7 @@ public:
     Blockchain(int genesis  = 1 );
     Block getBlock(int index);
     int getNumOfBlocks();
-    int addBlock(int index, string prevHash, string hash, string nonce, vector<string> &merkle);
+    int addBlock(size_t index, string prevHash, string hash, string nonce, vector<string> &merkle);
     string getLatestBlockHash();
     string toJSON();
     int replaceChain(json chain);
@@ -36,7 +36,7 @@ Blockchain::Blockchain(int genesis){
 };
 // Gets block based on the index
 Block Blockchain::getBlock(int index) {
-    for(int i = 0; i < this->blockchain.size(); i++) {
+    for(size_t i = 0; i < this->blockchain.size(); i++) {
         if(this->blockchain[i]->getIndex() == index) {
             return *(blockchain[i]);
         };
@@ -50,7 +50,7 @@ int Blockchain::getNumOfBlocks() {
 };
 
 // checks whether data fits with the right hash -> add block
-int Blockchain::addBlock(int index, string prevHash, string hash, string nonce, vector<string> &merkle) {
+int Blockchain::addBlock(size_t index, string prevHash, string hash, string nonce, vector<string> &merkle) {
     string header = to_string(index) + prevHash + getMerkleRoot(merkle) + nonce;
     if((!sha256(header).compare(hash)) && (hash.substr(0,2) == "00" ) && (index == blockchain.size())) {
         printf("Block hashes match --- Adding Block %s \n", hash.c_str());
@@ -70,7 +70,7 @@ string Blockchain::getLatestBlockHash() {
 string Blockchain::toJSON() {
     json j;
     j["length"] = this->blockchain.size();
-    for(int i = 0; i < this->blockchain.size(); i++){
+    for(size_t i = 0; i < this->blockchain.size(); i++){
         j["data"][this->blockchain[i]->getIndex()] = this->blockchain[i]->toJSON();
     };
     return j.dump(3);

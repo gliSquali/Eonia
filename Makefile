@@ -1,11 +1,12 @@
 EXENAME = main
+SRCNAME = src/Eonia.cpp
 OBJS = main.o
 
 CXX = g++
-CXXFLAGS = -std=c++14 -lssl -lcrypto -Wall -lboost_systemv -pthread
+CXXFLAGS = -std=c++14 -Iinclude -lssl -lcrypto -Wall -lboost_system -pthread
 
-main.o: main.cpp
-	$(CXX) main.cpp -o $(OBJS) $(CXXFLAGS)
+main.o: $(SRCNAME)
+	$(CXX) $(SRCNAME) -o $(OBJS) $(CXXFLAGS)
 
 clean:
 	-rm -f *.o $(EXENAME)

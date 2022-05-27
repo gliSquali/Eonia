@@ -1,6 +1,5 @@
 make --dry-run --keep-going --print-directory
 make: Entering directory '/home/loren/Documents/Eonia'
+make: 'main.o' is up to date.
 make: Leaving directory '/home/loren/Documents/Eonia'
  
-make: *** No targets specified and no makefile found.  Stop.
-

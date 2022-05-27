@@ -29,7 +29,7 @@ using HttpClient = SimpleWeb::Client<SimpleWeb::HTTP>;
 json getChainFromNodes(const vector<int> *listOfNodes){
     printf("Pinging nodes for chains....\n");
     vector<string> vect;
-    for(int i = 0; i < (*listOfNodes).size(); i++){
+    for(size_t i = 0; i < (*listOfNodes).size(); i++){
         int port = (*listOfNodes)[i];
         printf("--- pinging node %d\n",port);
         HttpClient client("localhost:" + to_string(port));
@@ -45,7 +45,7 @@ json getChainFromNodes(const vector<int> *listOfNodes){
     //find biggest blockchain
     json biggest_bc = json::parse(vect[0]);
     int max = 0;
-    for(int i =0; i < vect.size(); i++) {
+    for(size_t i =0; i < vect.size(); i++) {
         auto json_data = json::parse(vect[i]);
         if(max < json_data["length"].get<int>()) {
             max = json_data["length"].get<int>();
@@ -60,7 +60,7 @@ json getChainFromNodes(const vector<int> *listOfNodes){
 */
 void sendNewChain(const vector<int> *listOfNodes, string json){
     printf("Sending new chain to network....\n");
-    for(int i = 0; i < (*listOfNodes).size(); i++ ){
+    for(size_t i = 0; i < (*listOfNodes).size(); i++ ){
         int port = (*listOfNodes)[i];
         printf("--- sending to node %d\n", port);
         HttpClient client("localhost:" + to_string(port));
@@ -81,7 +81,7 @@ void addSelfToNetwork(const vector<int> *listOfNodes, int port) {
     printf("Sending port to all nodes\n");
     json j;
     j["port"] = port;
-    for(int i = 0; i < (*listOfNodes).size(); i++){
+    for(size_t i = 0; i < (*listOfNodes).size(); i++){
         int port = (*listOfNodes)[i];
         printf("--- sending port to node %d\n", port);
         HttpClient client("localhost:" + to_string(port));
