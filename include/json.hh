@@ -6043,7 +6043,7 @@ class basic_json
 
     @since version 1.0.0
     */
-    friend bool operator<(const_reference lhs, const_reference rhs) noexcept
+    /*friend bool operator<(const_reference lhs, const_reference rhs) noexcept
     {
         const auto lhs_type = lhs.type();
         const auto rhs_type = rhs.type();
@@ -6119,7 +6119,7 @@ class basic_json
         // we compare types. Note we have to call the operator explicitly,
         // because MSVC has problems otherwise.
         return operator<(lhs_type, rhs_type);
-    }
+    }*/
 
     /*!
     @brief comparison: less than or equal

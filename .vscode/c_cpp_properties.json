@@ -15,6 +15,17 @@
             "windowsSdkVersion": "10.0.19041.0",
             "cppStandard": "c++14",
             "intelliSenseMode": "windows-gcc-x86"
+        },
+        {
+            "name": "UNIX64",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/include/**"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/g++",
+            "cStandard": "gnu17",
+            "intelliSenseMode": "linux-gcc-x86"
         }
     ],
     "version": 4
